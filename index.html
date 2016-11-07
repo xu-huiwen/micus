@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="description" content="complete attributes of Music">
+        
+        	
+        <!-- Add to homescreen for Safari on Ios -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Music">
+		<link rel="apple-touch-icon" href="img/MIC-icon.png">
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="Music">
+		<meta name="theme-color" content="#FFFFFF">
+		<link rel="icon" sizes="192x192" href="img/MIC-icon.png">
+		<title></title>
+		<link rel="stylesheet" href="css/mic.css" />
+		<script src="jquery.js"></script>
+		<script src="micj.js"></script>
+	</head>
+	<body>
+		<audio id="audio"src="mic/谭维维 - 爱到底.mp3" autoplay=""loop=""></audio>
+		<div class="head"></div>
+		<div class="logo">
+			<div class="left">&lt;</div>
+			<div class="midddle"></div>
+			<!--爱到底-->
+			<div class="icon right">&#xe6dc;</div>
+		</div>
+		<div class="body">
+			<img src="img/2.png" alt="" />
+		</div>
+		<!--列表-->
+		<ul id="lists">
+        	<!--<li>
+        		<div class="left">
+        			<div class="top">爱到底</div>
+        			<div class="bottom">林俊杰</div>
+        		</div>
+        		<div class="right icon">&#xe778;</div>
+        	</li>
+        	<li>
+        		<div class="left">
+        			<div class="top">爱到底</div>
+        			<div class="bottom">林俊杰</div>
+        		</div>
+        		<div class="right icon">&#xe778;</div>
+        	</li>-->
+        </ul>
+        <!--音量-->
+        <div class="Lyrics">
+	        <div class="sound">
+	        	<div class="left icon">&#xe77e;</div>
+		        <div class="volume">
+		       	    <div class="v-i"></div>
+		        </div>
+		        <div class="right icon mute">&#xe776;</div>
+	        </div>
+	        <div class="lyri">
+	        	<p>听到都会红着脸躲避</p>
+	        	<p>虽然会经常忘了我依然爱着你</p>
+	        	<p>虽然会经常忘了我依然爱着你</p>
+	        	<p>虽然会经常忘了我依然爱着你</p>
+	        	<p>虽然会经常忘了我依然爱着你</p>
+	        	<p>虽然会经常忘了我依然爱着你</p>
+	        	<p>虽然会经常忘了我依然爱着你</p>
+	        	<p>虽然会经常忘了我依然爱着你</p>
+	        </div>
+        </div>
+        <!--底不变   音乐进度-->
+		<div class="footer">
+			<div class="top">
+				<div class="left">
+					<span class="fo1">7/76</span>
+					<span class="fo2">MP3</span>
+					<span class="fo3">128kbps</span>
+				</div>
+				<div class="right">
+					<span class="tone1">Hi-Fi</span>
+					<span class="tone2 icon">
+						<img src="img/4.png"/>
+					</span>
+				</div>
+			</div>
+			<div class="midddle">
+				<div class="current-time">0:00</div>
+				<div class="progress">
+					<div class="p-i"></div>
+				</div>
+				<div class="duration">4:00</div>
+			</div>
+			<div class="bottom">
+				<div class="prev icon">&#xe603;</div>
+				<div class="play icon">&#xe778;</div>
+				<div class="next icon">&#xe604;</div>
+			</div>
+		</div>
+	</body>
+</html>

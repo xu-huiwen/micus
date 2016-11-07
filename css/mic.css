@@ -1,0 +1,364 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: 0;
+  font-style: normal;
+  font-family: "微软雅黑";
+  color: #777779;
+}
+
+img {
+  vertical-align: middle;
+}
+
+html {
+  font-size: 100px;
+}
+
+body {
+  font-size: 15px;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 59.25926px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 66.66667px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 69.44444px;
+  }
+}
+
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 71.11111px;
+  }
+}
+
+@media screen and (min-width: 412px) {
+  html {
+    font-size: 76.2963px;
+  }
+}
+
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 76.66667px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 111.11111px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 118.51852px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 142.22222px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 148.14815px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 237.03704px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 296.2963px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: 266.66667px;
+  }
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont.woff') format('woff'),
+  url('iconfont.ttf') format('truetype'),
+  url('iconfont.svg#iconfont') format('svg');
+}
+.icon{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  color: #FFF;
+}
+body,html{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background: #242C3D;
+}
+.head {
+  width: 100%;
+  height: 0.34rem;
+  overflow: hidden;
+}
+.logo{
+	width: 100%;
+	height: 0.95rem;
+	background: #151F32;
+	overflow: hidden;
+}
+.logo div{
+	float: left;
+	height: 100%;
+	font-size: 30px;
+	color: #FFF;
+}
+.logo .left{
+	cursor:pointer;
+	margin-left: 0.24rem;
+	line-height: 0.95rem;
+	font-family: "宋体";
+	font-weight: bold;
+}
+.logo .midddle{
+	width: 78.5%;
+	text-align: center;
+	font-size: 24px;
+	line-height: 0.95rem;
+}
+.logo .right{
+	cursor:pointer;
+	margin-right: 0.24rem;
+	float: right;
+	line-height: 0.95rem;
+}
+.body{
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	height: 5.4rem;
+}
+.body img{
+	max-height: 100%;
+	max-width: 100%;
+}
+/*列表*/
+#lists{
+	display: none;
+	width: 100%;
+	background: url(../img/5.png);
+	opacity: 0.7;
+}
+#lists li{
+	cursor:pointer;
+	width: 90%;
+	height: 0.508rem;
+	padding-top: 0.17rem;
+	padding-bottom: 0.17rem;
+	border-top: 1px solid #5A6169;
+	margin: 0 auto;
+}
+#lists li .left{
+	float: left;
+}
+#lists li .left .top{
+	font-size: 15px;
+}
+#lists li .left .bottom{
+	font-size: 10px;
+}
+#lists li .right{
+	display: none;
+	line-height: 0.508rem;
+	float: right;
+}
+#lists .playno .right{
+	line-height: 0.508rem;
+	float: right;
+	display: block;
+}
+/*音量*/
+.Lyrics{
+	width: 100%;
+	display: none;
+}
+.Lyrics .sound{
+	width: 100%;
+	height: 0.7rem;
+	line-height: 0.7rem;
+}
+.Lyrics .sound .left,.right,.volume{
+	float: left;
+}
+.Lyrics .sound .left{
+	font-size: 18px;
+	margin-left: 0.47rem;
+}
+.Lyrics .sound .volume{
+	margin-top: 0.32rem;
+	width: 3.75rem;
+	height: 4px;
+	background: #505864;
+	position: relative;
+	margin-left: 0.27rem;
+}
+.Lyrics .sound .volume .v-i{
+	cursor:pointer;
+	position: absolute;
+	top: -0.09rem;
+	left: -0.11rem;
+	width: 0.22rem;
+	height: 0.22rem;
+	background: #FFF;
+	border-radius: 50%;
+}
+.Lyrics .sound .right{
+	margin-left: 0.18rem;
+	font-size: 18px;
+}
+.Lyrics .lyri{
+	overflow: hidden;
+	width: 100%;
+}
+.Lyrics .lyri p{
+	width: 100%;
+	height: 0.39rem;
+	text-align: center;
+	line-height: 0.39rem;
+}
+/*底不变      音乐进度*/
+.footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2.9rem;
+	background: url(../img/3.png);
+	opacity: 0.9;
+	z-index: 50;
+	overflow: hidden;
+}
+.footer .top{
+	width: 100%;
+	height: 0.96rem;
+	line-height: 0.96rem;
+}
+.footer .top .left{
+	float: left;
+}
+.footer .top .left .fo1{
+	color: #FFF;
+	margin-left: 0.24rem;
+}
+.footer .top .left .fo2{
+	color: #FFF;
+	margin-left: 0.14rem;
+}
+.footer .top .left .fo3{
+	color: #FFF;
+	margin-left: 0.14rem;
+}
+.footer .top .right{
+	float: right;
+}
+.footer .top .right span{
+	display: inline-block;
+	width: 0.48rem;
+	height: 0.48rem;
+	border: 1px solid #FFF;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 0.48rem;
+}
+.footer .top .right .tone1{
+	font-size: 5px;
+	color: #FFF;
+	margin-right: 0.14rem;
+}
+.footer .top .right .tone2{
+	font-size: 10px;
+	color: #FFF;
+	margin-right: 0.24rem;
+	cursor:pointer;
+}
+.footer .top .right .tone2 img{
+	max-width: 100%;
+	max-height: 100%;
+}
+.footer .midddle{
+	width: 100%;
+	height: 0.96rem;
+}
+.footer .midddle .current-time,.progress,.duration{
+	float: left;
+	line-height: 0.96rem;
+}
+.footer .midddle .current-time{
+	color: #C2CBD2;
+	margin-left: 0.24rem;
+}
+.footer .midddle .progress{
+	margin-top: 0.48rem;
+	width: 3.4rem;
+	height: 3px;
+	background: #A5ADB0;
+	margin-left: 0.17rem;
+	position: relative;
+}
+.footer .midddle .progress .p-i{
+	width: 4px;
+	height: 9px;
+	background: #FFF;
+	position: absolute;
+	left: -2px;
+	top: -3.5px;
+	cursor:pointer;
+}
+.footer .midddle .duration{
+	color: #C2CBD2;
+	margin-left: 0.24rem;
+}
+/*play*/
+.footer .bottom{
+	width: 100%;
+	height: 0.96rem;
+}
+.footer .bottom div{
+	cursor:pointer;
+	float: left;
+	font-size: 30px;
+}
+.footer .bottom .prev{
+	margin-left: 0.8rem;
+}
+.footer .bottom .play{
+	margin-left: 1.29rem;
+}
+.footer .bottom .next{
+	margin-left: 1.29rem;
+}
