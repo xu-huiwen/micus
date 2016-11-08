@@ -12,28 +12,28 @@ $(function(){
 	var mute=$(".mute");
     var currentIndex=1;
     var logo=$(".logo .right")
-    
-    
-    
-    
-    
+    var logox=$(".logo .midddle")
+    var lxs=$(".lxs")
     
     
     
     
     
     var musics=[{
-        name:"萌萌哒天团 - 魔都",
+        name:"青花瓷-萌萌哒天团",
     	author:"萌萌哒天团",
-    	src:"mic/萌萌哒天团 - 魔都.mp3"
+    	src:"mic/青花瓷-萌萌哒天团.mp3",
+    	src1:"img/6.png"
     	},{
     	name:"谭维维 - 爱到底",
     	author:"谭维维",
-    	src:"mic/谭维维 - 爱到底.mp3"
+    	src:"mic/谭维维 - 爱到底.mp3",
+    	src1:"img/2.png"
     	},{
-    	name:"孙子涵 (Niko Sun) - 唐人 (Live)",
-    	author:"孙子涵",
-    	src:"mic/孙子涵 (Niko Sun) - 唐人 (Live).mp3"
+    	name:"中国画-萌萌哒天团",
+    	author:"萌萌哒天团",
+    	src:"mic/中国画-萌萌哒天团.mp3",
+    	src1:"img/7.png"
     	}];
 
 function render(){
@@ -51,6 +51,7 @@ function render(){
     	$(this).addClass("playno");
     	currentIndex=$(this).index();
     	audio.src=musics[currentIndex].src;
+    	logox.html(musics[currentIndex].author)
     	audio.play();
     })
     render();
@@ -64,7 +65,9 @@ function render(){
     $("#lists").on("touchend",function(){
     	var index=$(this).index();
     	currentIndex=index;
-    	audio.src=musics[currentIndex].src;
+    	lxs.attr({src:musics[currentIndex].src1})
+    	logox.html(musics[currentIndex].author)
+//  	audio.src=musics[currentIndex].src;
     	render();
     })
     
@@ -75,6 +78,8 @@ function render(){
     		currentIndex=0;
     	}
     	audio.src=musics[currentIndex].src;
+    	lxs.attr({src:musics[currentIndex].src1})
+    	logox.html(musics[currentIndex].author)
     	render();
     }
     
@@ -85,6 +90,8 @@ function render(){
     		currentIndex=musics.length-1;
     	}
     	audio.src=musics[currentIndex].src;
+    	lxs.attr({src:musics[currentIndex].src1})
+    	logox.html(musics[currentIndex].author)
     	render();
     }
 
@@ -92,7 +99,9 @@ function render(){
     $(".next").on("touchend",next);
     render();
 
-
+$(audio).on("ended",function(){
+	next();
+})
     
 	var x=currentIndex;
 //	var xx=$(".playno .left .top").text();
@@ -182,10 +191,8 @@ function render(){
 	
 	$(audio).on("play",function(){
 		play.html("&#xf0067;");
-		var xx=$(".playno .left .top").text();
-		console.log(xx)
-		var xxx=$(".logo .middle").append(xxx);
-		console.log(xxx)
+//		var xx=$(".playno .left .top").text();
+//		var xxx=$(".logo .middle").append(xxx);
 		
     })	
 	$(audio).on("pause",function(){
@@ -290,4 +297,29 @@ function render(){
 	$(document).on('mouseup',function(){
 			$(document).off('mousemove');
 		})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 })

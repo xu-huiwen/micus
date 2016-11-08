@@ -146,7 +146,7 @@ body,html{
 	font-weight: bold;
 }
 .logo .midddle{
-	width: 78.5%;
+	width: 76.8%;
 	text-align: center;
 	font-size: 24px;
 	line-height: 0.95rem;
@@ -167,6 +167,10 @@ body,html{
 	max-height: 100%;
 	max-width: 100%;
 }
+.lxs{
+	display: block;
+}
+
 /*列表*/
 #lists{
 	display: none;
