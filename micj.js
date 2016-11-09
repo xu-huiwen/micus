@@ -51,7 +51,7 @@ function render(){
     	$(this).addClass("playno");
     	currentIndex=$(this).index();
     	audio.src=musics[currentIndex].src;
-    	logox.html(musics[currentIndex].author)
+    	logox.html(musics[currentIndex].name)
     	audio.play();
     })
     render();
@@ -66,7 +66,7 @@ function render(){
     	var index=$(this).index();
     	currentIndex=index;
     	lxs.attr({src:musics[currentIndex].src1})
-    	logox.html(musics[currentIndex].author)
+    	logox.html(musics[currentIndex].name)
 //  	audio.src=musics[currentIndex].src;
     	render();
     })
@@ -79,7 +79,7 @@ function render(){
     	}
     	audio.src=musics[currentIndex].src;
     	lxs.attr({src:musics[currentIndex].src1})
-    	logox.html(musics[currentIndex].author)
+    	logox.html(musics[currentIndex].name)
     	render();
     }
     
@@ -91,7 +91,7 @@ function render(){
     	}
     	audio.src=musics[currentIndex].src;
     	lxs.attr({src:musics[currentIndex].src1})
-    	logox.html(musics[currentIndex].author)
+    	logox.html(musics[currentIndex].name)
     	render();
     }
 
