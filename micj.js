@@ -190,10 +190,7 @@ $(audio).on("ended",function(){
 	//播放与暂停
 	
 	$(audio).on("play",function(){
-		play.html("&#xf0067;");
-//		var xx=$(".playno .left .top").text();
-//		var xxx=$(".logo .middle").append(xxx);
-		
+		play.html("&#xf0067;");	
     })	
 	$(audio).on("pause",function(){
          play.html("&#xe778;");
