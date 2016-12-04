@@ -445,15 +445,15 @@ body {
 }
 .footers .top .right span{
   display: inline-block;
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0.7rem;
+  height: 0.7rem;
   border: 1px solid #FFF;
   border-radius: 50%;
   text-align: center;
-  line-height: 0.6rem;
+  line-height: 0.7rem;
 }
 .footers .top .right .tone1{
-  font-size: 2px;
+  font-size: 2px !important;
   color: #FFF;
   margin-right: 0.14rem;
 }
