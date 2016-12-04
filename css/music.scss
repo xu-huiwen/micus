@@ -1,0 +1,891 @@
+
+$device-width:320px,360px,375px,412px,414px;
+$width:750px;
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    font-family: "iconfont","微软雅黑"!important;
+}
+img{
+    border: none;
+}
+
+html{
+    font-size: 100px;
+}
+body{
+    font-size: 16px;
+    background: #23232E;
+}
+
+@each $w in $device-width{
+    @media screen and (min-width:#{$w}){
+        html{
+            font-size:100px * $w / $width;
+        }
+    }
+}
+
+@mixin top-bottom{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+@mixin center{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+//遮罩
+
+#zhao{
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    background-image: url('../images/11.jpg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    height:150%;
+    width: 150%;
+    text-align: center;
+    float: left;
+    -webkit-filter: blur(0.3rem);
+    -moz-filter: blur(0.3rem);
+    -o-filter: blur(0.3rem);
+    -ms-filter: blur(0.3rem);
+    filter: blur(0.3rem);
+    z-index: -1;
+    
+}
+
+//头部
+
+#header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 10%;
+    display: block;
+
+    .return,.message,.share{
+        height: 100%;
+        float: left;
+        display: block;
+    }
+    .return{
+        width: 15%;
+        position: relative;
+        z-index: 10;
+        a{
+            @include center;
+            width: 0.5rem;
+            height: 0.5rem;
+            display: block;
+            color: #FFFFFF;
+            line-height: 0.5rem;
+            font-size: 0.5rem;
+            text-align: center;
+            
+        }
+    }
+    .message{
+        width: 70%;
+        position: relative;
+        .show{
+            @include center;
+            width: 100%;
+            display: block;
+            height: 0.65rem;
+            .name{
+                width: 100%;
+                display: block;
+                height:53%;
+                padding-left: 0.2rem;
+                font-size: 0.35rem;
+                color: #fff;
+                letter-spacing: 0.01rem;
+                line-height: 0.4rem;
+            }
+            .author{
+                width: 100%;
+                display: block;
+                height:47%;
+                margin-top: 0.1rem;
+                padding-left: 0.2rem;
+                font-size: 0.25rem;
+                color: #a5a5a5;
+                letter-spacing: 0.01rem;
+                line-height: 0.35rem;
+            }
+        }
+        
+    }
+    .share{
+        width: 15%;
+        position: relative;
+        a{
+            @include center;
+            width: 0.5rem;
+            height: 0.5rem;
+            display: block;
+            color: #FFFFFF;
+            line-height: 0.5rem;
+            font-size: 0.5rem;
+            text-align: center;
+        }
+    }
+}
+
+//歌词部分
+
+#lyric{
+    position: fixed;
+    left: 0;
+    top: 15%;
+    z-index: 1;
+    width: 100%;
+    height: 58.5%;
+    display: block;
+    .lyric-box{
+        width:100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        .lyric{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+           
+            p{
+                float: left;
+                display: block;
+                height: 1rem;
+                line-height: 1rem;
+                text-align: center;
+                width: 100%;
+                font-size: 0.35rem;
+                color: #eceaea;
+                overflow: hidden;
+            }
+            .active{
+                color: #ce3d3e;
+                font-size: 0.4rem;
+                font-weight: bold;
+            }
+        }
+    }
+    
+}
+
+/*歌曲列表*/
+
+
+#volume{
+    position: fixed;
+    top: 10%;
+    left: 0;
+    height:5%;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    .left,.right{
+        float: left;
+        height: 100%;
+        display: block;
+    }
+    .left{
+        width: 15%;
+        a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 0.65rem;
+            text-align: center;
+            font-size: 0.35rem;
+            color: #f0f1f1;
+        }
+    }
+    .right{
+        width: 85%;
+        position: relative;
+        .volume{
+            margin-left: 5%;
+            width: 90%;
+            height:0.05rem ;
+            margin-top: 0.3rem;
+            background: #a0a9a9;
+            border-radius:0.1rem;
+            position: relative;
+            z-index: 1;
+            a{
+                display: block;
+                width: 0.26rem;
+                height: 0.26rem;
+                position: absolute;
+                left: -0.13rem;
+                top: -0.105rem;
+                border-radius: 50%;
+                z-index: 5;
+                background: #fff;
+            }
+            .this{
+                z-index: 4;
+                height: 100%;
+                width: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: #f0f1f1;
+                border-radius:0.1rem;
+            }
+        }
+        
+        
+    }
+}
+
+
+
+//  尾部
+
+#floor{
+    position: fixed;
+    left: 0;
+    bottom: 2%;
+    z-index: 1;
+    width: 100%;
+    height: 24.5%;
+    display: block;
+    #menu,#progress,#key{
+        width: 100%;
+        float: left;
+           
+    }
+    #menu{
+        height:30%;
+        .center{
+            display: block;
+            width: 80%;
+            height: 100%;
+            margin-left: 10%;
+            div{
+                width: 25%;
+                float: left;
+                height: 100%;
+            }
+            .like{
+                position: relative;
+                a{
+                    @include center;
+                    display: block;
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    font-size: 0.6rem;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 0.6rem;
+                }
+                .click{
+                    color: red;
+                }
+            }
+            .download{
+                position: relative;
+                a{
+                    @include center;
+                    display: block;
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    font-size: 0.5rem;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 0.6rem;
+                }
+            }
+            .comment{
+                position: relative;
+                a{
+                    @include center;
+                    display: block;
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    font-size: 0.5rem;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 0.6rem;
+                }
+            }
+            .more{
+                position: relative;
+                a{
+                    @include center;
+                    display: block;
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    font-size: 0.5rem;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 0.6rem;
+                }
+            }
+        }    
+    }
+    
+//  <!--音乐进度条-->
+    
+    #progress{
+        height:26.7%;
+        .begin,.pro,.over{
+            float: left;
+            height: 100%;
+            display: block;
+        }
+        .begin{
+            width: 12%;
+            span{
+                display: block;
+                width: 100%;
+                height: 100%;
+                line-height: 0.8rem;
+                text-align: right;
+                font-size: 0.16rem;
+                color: #999;
+            }
+        }
+        .pro{
+            width: 76%;
+            position: relative;
+            .progress{
+                margin-left: 5%;
+                width: 90%;
+                height:0.05rem ;
+                margin-top: 0.37rem;
+                background: #616969;
+                border-radius:0.1rem;
+                position: relative;
+                z-index: 1;
+                a{
+                    display: block;
+                    width: 0.3rem;
+                    height: 0.3rem;
+                    position: absolute;
+                    left: -0.15rem;
+                    top: -0.125rem;
+                    border-radius: 50%;
+                    z-index: 5;
+                    background: #fff;
+                }
+                .red{
+                    z-index: 4;
+                    height: 100%;
+                    width: 0;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: #ff3838;
+                    border-radius:0.1rem;
+                }
+            }
+            
+            
+        }
+        .over{
+            width: 12%;
+            span{
+                display: block;
+                width: 100%;
+                height: 100%;
+                line-height: 0.8rem;
+                text-align: left;
+                font-size: 0.16rem;
+                color: #999;
+            }
+        }
+    }
+    
+//  <!--底部控制键-->
+    
+    #key{
+        height:43.3%;
+        div{
+            float: left;
+            height: 100%;
+            width: 20%;
+        }
+        .start{    
+            a{ 
+                margin-left: 0.1rem;
+                width: 100%;
+                margin-top: -0.1rem;
+                height: 100%;
+                font-size: 1.3rem;
+                color: #fff;
+                display: block;
+                z-index: 2;
+            }
+              
+        }
+        .left{    
+            position: relative;
+            a{ 
+                @include center;
+                text-align: center;
+                width: 0.78rem; 
+                height: 0.78rem;
+                font-size: 0.5rem;
+                line-height: 0.70rem;
+                color: #fff;
+                display: block;
+                border-radius: 50%;
+                border: 2px solid #fff;
+            }   
+            
+        }
+        .right{
+            position: relative;
+            a{ 
+                @include center;
+                text-align: center;
+                width: 0.78rem; 
+                height: 0.78rem;
+                font-size: 0.5rem;
+                line-height: 0.70rem;
+                color: #fff;
+                display: block;
+                border-radius: 50%;
+                border: 2px solid #fff;
+            }   
+        }
+        .circulation{
+            position: relative;
+            a{ 
+                @include center;
+                text-align: center;
+                width: 0.78rem; 
+                height: 0.78rem;
+                font-size: 0.6rem;
+                line-height: 0.70rem;
+                color: #fff;
+                display: none;
+            }   
+            .active{
+                display: block;
+            } 
+        }
+        .list{
+            position: relative;
+            a{ 
+                @include center;
+                text-align: center;
+                width: 0.78rem; 
+                height: 0.78rem;
+                font-size: 0.6rem;
+                line-height: 0.70rem;
+                color: #fff;
+                display: block;
+            }   
+        }
+    }
+}
+
+@keyframes lists{
+    0%{
+        height: 0;
+        }
+    50%{
+        height: 2.6rem;
+        }
+    100%{
+        height: 5.15rem;
+        
+    }
+}
+@keyframes list{
+    0%{
+        height: 5.15rem;
+        }
+    50%{
+        height: 2.6rem;
+        }
+    100%{
+        height: 0;
+        
+    }
+}
+
+//<!--列表-->
+
+#list{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 20;
+    background: #f9f9f9;
+    display: block;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    .uls-header{
+        float: left;
+        height: 1.1rem;
+        width: 100%;
+        display: block;
+        background: #fff;
+        border-bottom: 1px solid #e2e2e2;
+        .collect,.list,.clear{
+            float: left;
+            height: 100%;
+        }
+        .collect{
+            position: relative;
+            width: 22%;
+            a{
+                @include center;
+                display: block;
+                width: auto;
+                height: auto;
+                font-size: 0.3rem;
+                color: #929292;
+                text-align: center;
+                line-height: 1.1rem;
+            }
+        }
+        .clear{
+            position: relative;
+            width: 22%;
+            a{
+                @include center;
+                display: block;
+                width: auto;
+                height: auto;
+                font-size: 0.3rem;
+                color: #929292;
+                padding-right: 15%;
+                text-align: right;
+                line-height: 1.1rem;
+            }
+        }
+        .list{
+            position: relative;
+            width: 56%;
+            a{
+                @include center;
+                display: block;
+                width: auto;
+                height: auto;
+                overflow: hidden;
+                text-align: center;
+                line-height: 1.1rem;
+                font-size: 0.35rem;
+                color: #333333;
+            }
+        }
+    }
+    #uls{
+        float: left;
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 0.1rem;
+        background: #fff;
+        li{
+            display: block;
+            padding-left: 0.25rem;
+            width:100%;
+            float: left;
+            height: 0.95rem;
+            border-bottom: 1px solid #e1e1e1;
+            position: relative;
+            .names{
+                @include top-bottom;
+                width: 80%;
+                left: 5%;
+                line-height: 0.95rem;
+                font-size: 0.3rem;
+                color: #000000;
+                
+            }
+            
+            .delete{
+                text-align: right;
+                @include top-bottom;
+                right: 5%;
+                text-align: center;
+                line-height: 0.95rem;
+                font-size: 0.4rem;
+                width: auto;
+                height: auto;
+                color: #cfcfcf;
+            }
+        }
+        
+        .active span{
+            color: red;
+        }
+    }
+    .uls-floor{
+        float: left;
+        height: 1.1rem;
+        width: 100%;
+        display: block;
+        background: #fff;
+        border-top: 1px solid #e2e2e2;
+        .close{
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 1.1rem;
+            font-size: 0.35rem;
+            color: #333333;
+        }
+        
+    }
+}
+
+#list.li{
+    animation: lists 1s linear both;
+}
+#list.lis{
+    animation: list 1s linear both;
+}
+
+
+
+@keyframes click-one{
+    0%{
+        width: 0;
+        }
+    50%{
+        width: 40%;
+        }
+    100%{
+        width: 80%;
+        
+    }
+}
+@keyframes clicks-one{
+    0%{
+        width: 0;
+        }
+    99%{
+        width: 0;
+        }
+    100%{
+        width:20%;
+        
+    }
+}
+@keyframes click-two{
+    0%{
+        width: 80%;
+        }
+    50%{
+        width: 40%;
+        }
+    100%{
+        width: 0;
+        
+    }
+}
+@keyframes clicks-two{
+    0%{
+        width: 20%;
+        }
+    1%{
+        width: 0;
+        }
+    100%{
+        width:0;
+        
+    }
+}
+
+// 用户
+
+
+#user{
+    width: auto;
+    height: 100%;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    overflow: hidden;
+    .user-left{
+        height: 100%;
+        width: 0;
+        display: block;
+        float: left;
+        background: #fff;
+        position: relative;
+        overflow: hidden;
+        .user-top{
+            float: left;
+            height: 28%;
+            width: 100%;
+            display: block;
+            position: relative;
+            background: url(../images/user.jpg);
+            background-size: cover;
+            overflow: hidden;
+            
+            .message{
+                @include top-bottom;
+                left: 5%;
+                height: 1.5rem;
+                width: 1.5rem;
+                border-radius: 50%;
+                background: url(../images/1.jpg);
+                background-size: cover;
+                overflow: hidden;
+            }
+            .user-name{
+                position: absolute;
+                left: 5%;
+                bottom: 8%;
+                display: block;
+                height: 0.6rem;
+                width: auto;
+                font-size: 0.4rem;
+                color: #fff;
+                letter-spacing: 0.01rem;
+                line-height: 0.6rem;
+                overflow: hidden;
+            }
+            .registration{
+                position: absolute;
+                right: 6%;
+                bottom: 8%;
+                display: block;
+                border-radius: 0.05rem;
+                border: 1px solid #fff;
+                height: 0.6rem;
+                width: 1.2rem;
+                font-size: 0.35rem;
+                color: #fff;
+                letter-spacing: 0.1rem;
+                text-align: center;
+                line-height: 0.6rem;
+                overflow: hidden;
+            }
+        }
+        .user-bottom{
+            float: left;
+            height: 65%;
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            
+            li{
+                float: left;
+                height: 1rem;
+                width: 100%;
+                display: block;
+                background: #f2f4f5;
+                
+                a{
+                    height: 100%;
+                    width: 100%;
+                    padding-left: 5%;
+                    line-height: 1rem;
+                    text-align: left;
+                    font-size: 0.3rem;
+                    color: #ce3d3e;
+                    span{
+                        margin-left:0.35rem; 
+                        color: #4b4c4c;
+                    }
+                }
+            }
+        }
+        .set{
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 7%;
+            width: 100%;
+            background: #fff;
+            overflow: hidden;
+            .set-left{
+                float: left;
+                width: 50%;
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                a{
+                    font-size: 0.3rem;
+                    display: block;
+                    @include top-bottom;
+                    text-align: center;
+                    width: 100%;
+                    height: 0.3rem;
+                    border-right: 1px solid #dadcdd;
+                    color: #444444;
+                    overflow: hidden;
+                }
+            }
+            .set-right{
+                float: left;
+                width: 50%;
+                position: relative;
+                height: 100%;
+                overflow: hidden;
+                a{
+                    font-size: 0.3rem;
+                    display: block;
+                    @include top-bottom;
+                    text-align: center;
+                    width: 100%;
+                    height: 0.3rem;
+                    color: #444444;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    .dong{
+        animation: click-one 1s linear both;
+    }
+    .dongs{
+        animation: click-two 1s linear both;
+    }
+    .user-right{
+        height: 100%;
+        width: 0;
+        display: block;
+        float: left;
+        background: rgba(0,0,0,0.5);
+    }
+    .zhezhao{
+        animation: clicks-one 1.1s linear both;
+    }
+    .zhezhaos{
+        animation: clicks-two 1.1s linear both;
+    }
+    
+    
+    
+}
+#user.user-display{
+    display: none;
+}
