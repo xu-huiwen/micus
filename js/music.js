@@ -36,18 +36,14 @@ $(document).ready(function(){
 	
 	
 	
-	
+	cir.on("touchend",false)
 	cir.on("touchstart",function(e){
 		
 		var offsetX=e.originalEvent.changedTouches[0].clientX -cir.offset().left;
 		var ir=cir.width()/2;
-		console.log(ir)
-		console.log(offsetX)
-		
 		var start= ir - offsetX;
-		console.log(start)
 		$(document).on("touchstart",function(e){
-			var left=e.clientX - progress.position().left +start;
+			var left=e.originalEvent.changedTouches[0].clientX - progress.position().left +start;
 			var c= left/progress.width()*audio.duration;
 			if(c>=audio.duration || c<=0){
 				return;
@@ -65,17 +61,16 @@ $(document).ready(function(){
 	progress.on("touchend",function(e){
 		var ir=cir.width()/2;
 		var offsetX=e.originalEvent.changedTouches[0].clientX -cir.offset().left;
-		audio.currentTime=offsetX/progress.width()*audio.duration;
-		console.log(audio.currentTime)
+		audio.currentTime=(offsetX) / (progress.width()*audio.duration);
     });
 	
 	//音乐进度
     
 	$(audio).on("timeupdate",function(){
-		var ir=cir.width()/2;
 		current.html(time(audio.currentTime));
-		var left= progress.width()* audio.currentTime /audio.duration-ir;
-		var width=progress.width()* audio.currentTime /audio.duration;
+		var ir=cir.width()/2;
+		var width=progress.width()* audio.currentTime /audio.duration
+		var left= progress.width()* audio.currentTime /audio.duration-ir
 		cir.css("left",left);
 		red.css("width",width);
 	})
